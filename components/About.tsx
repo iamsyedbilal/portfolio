@@ -103,7 +103,7 @@ export default function About() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
-                Building my portfolio with Next.js
+                Built portfolio with Next.js
               </li>
               <li className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />

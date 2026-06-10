@@ -60,6 +60,8 @@ export const skills = [
   "Bootstrap",
   "Supabase",
   "Appwrite",
+  "React Hook Form ",
+  "Zod",
   "Redux Toolkit",
   "React Query",
   "Zustand",

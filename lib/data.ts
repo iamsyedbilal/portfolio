@@ -108,7 +108,7 @@ export const links = [
   { label: "Fiverr", href: "https://www.fiverr.com/iamsyedbilal" },
   {
     label: "Upwork",
-    href: "https://www.upwork.com/freelancers/iamsyedbilal",
+    href: "https://www.upwork.com/freelancers/~0188c7ff53f8a52869",
   },
   {
     label: "Frontend Mentor",

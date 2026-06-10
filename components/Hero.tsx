@@ -35,8 +35,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-bold text-slate-400 mb-4 leading-tight">
-          I build things for the web.
+          className="text-2xl md:text-4xl font-bold text-slate-400 mb-4 leading-tight">
+          Building Fast, Scalable Web Apps
         </motion.h2>
 
         {/* Description */}
@@ -45,11 +45,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-slate-400 text-lg max-w-2xl mb-8 leading-relaxed">
-          I&apos;m a React and TypeScript developer from{" "}
-          <span className="text-[#a78bfa]">Karachi, Pakistan</span>,
-          specializing in building production-quality dashboards, SaaS
-          applications, and responsive web experiences. Currently open to
-          freelance work.
+          I’m a frontend developer from{" "}
+          <span className="text-[#a78bfa]">Karachi, Pakistan</span>, focused on
+          building fast, scalable, and user-friendly web applications. I help
+          startups and businesses turn ideas into production-ready SaaS
+          products, dashboards, and modern web platforms. Currently available
+          for freelance work.
         </motion.p>
 
         {/* CTA Buttons */}

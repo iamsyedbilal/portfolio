@@ -5,3 +5,4 @@ export { default as Projects } from "./Projects";
 export { default as Journey } from "./Journey";
 export { default as Contact } from "./Contact";
 export { default as Footer } from "./Footer";
+export { default as Loader } from "./Loader";

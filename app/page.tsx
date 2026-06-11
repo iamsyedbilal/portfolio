@@ -6,18 +6,22 @@ import {
   Journey,
   Contact,
   Footer,
+  Loader,
 } from "@/components";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Journey />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <Loader />
+      <main>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Journey />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }

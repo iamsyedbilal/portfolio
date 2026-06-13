@@ -54,21 +54,38 @@ export default function FeaturedProjectCard({
       </div>
 
       <div className={isReversed ? "md:text-right" : ""}>
+        <p className="text-[#a78bfa] font-mono text-xs uppercase tracking-widest mb-2">
+          Featured Project
+        </p>
         <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
 
         <p className="text-slate-400 text-sm mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tech.map((t) => (
-            <span key={t} className="text-xs text-[#a78bfa]">
+            <span
+              key={t}
+              className="text-xs text-[#a78bfa] bg-[#a78bfa]/10 px-3 py-1 rounded-full">
               {t}
             </span>
           ))}
         </div>
 
         <div className="flex gap-4">
-          <a href={project.github}>GitHub ↗</a>
-          <a href={project.live}>Live ↗</a>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-[#a78bfa] transition-colors text-sm">
+            GitHub ↗
+          </a>
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-[#a78bfa] transition-colors text-sm">
+            Live ↗
+          </a>
         </div>
       </div>
     </motion.div>

@@ -2,23 +2,13 @@
 
 import { motion } from "framer-motion";
 import { journey } from "@/lib/data";
+import SectionHeading from "./SectionHeading";
 
 export default function Journey() {
   return (
     <section id="journey" className="py-8 px-6 md:px-10 max-w-6xl mx-auto">
       {/* Section Label */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-16">
-        <span className="text-[#a78bfa] font-mono text-sm">03.</span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
-          My Journey
-        </h2>
-        <div className="flex-1 h-px bg-[#a78bfa]/15 ml-4" />
-      </motion.div>
+      <SectionHeading number="04." title="My Journey" />
 
       {/* Timeline */}
       <div className="relative">

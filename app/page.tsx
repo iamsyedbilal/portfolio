@@ -7,6 +7,7 @@ import {
   Contact,
   Footer,
   Loader,
+  WhyMe,
 } from "@/components";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
+        <WhyMe />
         <Projects />
         <Journey />
         <Contact />

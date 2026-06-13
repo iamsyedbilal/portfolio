@@ -16,7 +16,7 @@ export const projects = [
     tech: ["React", "TypeScript", "Supabase", "Zustand", "React Query"],
     image: "/projects/bookmark-manager-light.png",
     live: "https://bookmark-manager-tx3d.vercel.app",
-    github: "https://github.com/iamsyedbilal/bookmark-manager",
+    github: "https://github.com/iamsyedbilal/bookmark_manager",
     featured: true,
   },
   {
@@ -128,7 +128,62 @@ export const stats = [
 
 export const navLinks = [
   { label: "About", href: "#about" },
+  { label: "WhyMe", href: "#whyme" },
   { label: "Projects", href: "#projects" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
+];
+
+export const codeBlock = {
+  const: "const",
+  name: "bilal",
+  data: {
+    role: '"React & TypeScript Developer"',
+    location: '"Karachi, Pakistan"',
+    skills: '["React", "TypeScript", "Next.js", "Supabase"]',
+    available: "true",
+  },
+};
+
+export const reasons = [
+  {
+    icon: "⚡",
+    title: "Production Ready",
+    desc: "Every project I deliver is fully deployed, responsive, and ready for real users — not just a prototype.",
+  },
+  {
+    icon: "🧹",
+    title: "Clean Code",
+    desc: "Well-structured, readable, and maintainable code. Feature-based architecture that scales.",
+  },
+  {
+    icon: "💬",
+    title: "Clear Communication",
+    desc: "I keep you updated throughout the project. No ghosting, no surprises — just honest updates.",
+  },
+  {
+    icon: "⏰",
+    title: "On-Time Delivery",
+    desc: "I respect deadlines. If something changes, I tell you early — not the day it was due.",
+  },
+  {
+    icon: "📱",
+    title: "Mobile Responsive",
+    desc: "Every project works perfectly on all screen sizes — desktop, tablet, and mobile.",
+  },
+  {
+    icon: "🛡️",
+    title: "Post-Delivery Support",
+    desc: "Free bug fixes for 7 days after delivery. I don't disappear once the project is done.",
+  },
+];
+
+export const socialLinks = [
+  { label: "GitHub", href: "https://github.com/iamsyedbilal" },
+  { label: "Twitter", href: "https://twitter.com/SyedBilal200" },
+
+  {
+    label: "Frontend Mentor",
+    href: "https://www.frontendmentor.io/profile/iamsyedbilal",
+  },
 ];

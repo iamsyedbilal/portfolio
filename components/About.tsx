@@ -2,21 +2,13 @@
 
 import { motion } from "framer-motion";
 import { skills, stats } from "@/lib/data";
+import SectionHeading from "./SectionHeading";
 
 export default function About() {
   return (
     <section id="about" className="py-24 px-6 md:px-10 max-w-6xl mx-auto">
       {/* Section Label */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-4 mb-16">
-        <span className="text-[#a78bfa] font-mono text-sm">01.</span>
-        <h2 className="text-2xl md:text-3xl font-bold text-white">About Me</h2>
-        <div className="flex-1 h-px bg-[#a78bfa]/15 ml-4" />
-      </motion.div>
+      <SectionHeading number="01." title="About Me" />
 
       <div className="grid md:grid-cols-2 gap-16 items-start">
         {/* Text */}

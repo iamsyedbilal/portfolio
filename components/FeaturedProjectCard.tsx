@@ -40,7 +40,7 @@ export default function FeaturedProjectCard({
           <Image
             src={project.image}
             alt={project.title}
-            sizes=""
+            sizes="full"
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />

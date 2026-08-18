@@ -1,85 +1,13 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #08090d;
-  --surface: #101219;
-  --accent: #a78bfa;
-  --accent-2: #67e8f9;
-  --text-primary: #f5f5f5;
-  --text-secondary: #8b93a7;
-  --border: rgba(255, 255, 255, 0.09);
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text-primary);
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background-image: linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(to bottom, black, transparent 82%);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(circle at 70% 12%, rgba(167,139,250,.09), transparent 28%), radial-gradient(circle at 15% 55%, rgba(103,232,249,.045), transparent 24%);
-}
-
-::selection { background: #a78bfa; color: #08090d; }
-
-::-webkit-scrollbar { width: 7px; }
-::-webkit-scrollbar-track { background: #08090d; }
-::-webkit-scrollbar-thumb { background: #292d39; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: #a78bfa; }
-
-.glass {
-  background: rgba(10, 11, 16, 0.62);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.nav-glow { box-shadow: 0 12px 50px rgba(0,0,0,.24); }
-
-.engineering-grid {
-  background-color: #0d0f15;
-  background-image: linear-gradient(rgba(167,139,250,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,.07) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.reveal-line {
-  animation: reveal-line 1.2s cubic-bezier(.22,1,.36,1) both;
-}
-
-.float-slow { animation: float-slow 7s ease-in-out infinite; }
-
-@keyframes reveal-line {
-  from { transform: scaleX(0); transform-origin: left; opacity: 0; }
-  to { transform: scaleX(1); transform-origin: left; opacity: 1; }
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translate3d(0,0,0); }
-  50% { transform: translate3d(0,-12px,0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-}
+:root { --bg:#08090d; --surface:#101219; --accent:#a78bfa; --accent-2:#67e8f9; --text-primary:#f5f5f5; --text-secondary:#8b93a7; --border:rgba(255,255,255,.09); }
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text-primary);font-family:"Inter",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 72% 8%,rgba(167,139,250,.09),transparent 25%),radial-gradient(circle at 12% 55%,rgba(103,232,249,.035),transparent 22%)}
+::selection{background:#a78bfa;color:#08090d}::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:#08090d}::-webkit-scrollbar-thumb{background:#292d39;border-radius:99px}::-webkit-scrollbar-thumb:hover{background:#a78bfa}
+.glass{background:rgba(10,11,16,.66);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)} .nav-glow{box-shadow:0 12px 50px rgba(0,0,0,.24)}
+.engineering-grid{background-color:#0d0f15;background-image:linear-gradient(rgba(167,139,250,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.065) 1px,transparent 1px);background-size:32px 32px}
+.section-tight{padding-top:72px;padding-bottom:72px}.section-rule{border-top:1px solid rgba(255,255,255,.08)}
+.interactive{transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s ease,background-color .35s ease}.interactive:hover{transform:translateY(-3px)}
+@keyframes float-slow{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}} .float-slow{animation:float-slow 7s ease-in-out infinite}
+@media(max-width:768px){.section-tight{padding-top:52px;padding-bottom:52px}} @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

@@ -8,14 +8,14 @@ type Props = {
 export default function SectionHeading({ number, title }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex items-center gap-4 mb-16">
-      <span className="text-[#a78bfa] font-mono text-sm">{number}</span>
-      <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
-      <div className="flex-1 h-px bg-[#a78bfa]/15 ml-4" />
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.6 }}
+      className="mb-14 flex items-end gap-5 border-b border-white/10 pb-5">
+      <span className="font-mono text-xs tracking-[0.28em] text-[#a78bfa]">{number}</span>
+      <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">{title}</h2>
+      <span className="mb-2 hidden font-mono text-[10px] uppercase tracking-[0.25em] text-slate-600 md:block">selected work</span>
     </motion.div>
   );
 }

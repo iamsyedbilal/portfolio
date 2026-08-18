@@ -1,100 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionHeading from "./SectionHeading";
 import { socialLinks } from "@/lib/data";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-16 px-6 md:px-10 max-w-4xl mx-auto text-center">
-      <SectionHeading number="05." title="Get In Touch" />
-
-      {/* Content */}
+    <section id="contact" className="mx-auto max-w-7xl px-6 py-32 md:px-10">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="space-y-4 mb-12">
-        <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
-          I&apos;m currently open to freelance projects and new opportunities.
-          Have a project in mind? Let&apos;s jump on a quick call and discuss
-          how I can help.
-        </p>
-        <p className="text-slate-500 text-sm">
-          Average response time: within 24 hours
-        </p>
-      </motion.div>
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7 }}
+        className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.025] p-8 text-center md:p-16"
+      >
+        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#a78bfa]/15 blur-3xl" />
+        <p className="relative font-mono text-[10px] uppercase tracking-[0.3em] text-[#a78bfa]">05 / let&apos;s build</p>
+        <h2 className="relative mx-auto mt-6 max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white md:text-7xl">Have a product worth building?</h2>
+        <p className="relative mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-400">I&apos;m open to freelance work, collaborations and interesting engineering problems. Tell me what you&apos;re building.</p>
 
-      {/* CTA Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-        {/* Primary CTA */}
-        <a
-          href="https://calendly.com/syedbilal-dev27/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-4 bg-[#a78bfa] text-[#0f0a1e] font-semibold rounded-lg hover:bg-[#b69cff] transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
-          📅 Schedule a Call
-        </a>
+        <div className="relative mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="mailto:syedbilal.dev27@gmail.com?subject=Project%20Inquiry" className="rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#08090d] transition hover:-translate-y-1">Start a conversation ↗</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-1 hover:border-white/30">View résumé</a>
+        </div>
 
-        {/* Secondary CTA */}
-        <a
-          href="https://mail.google.com/mail/?view=cm&to=syedbilal.dev27@gmail.com&su=Project Inquiry&body=Hi Bilal, I'd like to discuss a project with you."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-4 border border-[#a78bfa] text-[#a78bfa] font-semibold rounded-lg hover:bg-[#a78bfa]/10 transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
-          ✉️ Send an Email
-        </a>
-      </motion.div>
-
-      {/* Fiverr / Upwork quick links */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-        <a
-          href="https://www.fiverr.com/iamsyedbilal"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-2.5 rounded-lg border border-[#a78bfa]/20 text-slate-400 text-sm hover:text-[#a78bfa] hover:border-[#a78bfa]/50 transition-all duration-200 inline-flex items-center justify-center gap-2">
-          Hire on Fiverr ↗
-        </a>
-
-        <a
-          href="https://www.upwork.com/freelancers/~0188c7ff53f8a52869"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-2.5 rounded-lg border border-[#a78bfa]/20 text-slate-400 text-sm hover:text-[#a78bfa] hover:border-[#a78bfa]/50 transition-all duration-200 inline-flex items-center justify-center gap-2">
-          Hire on Upwork ↗
-        </a>
-      </motion.div>
-
-      {/* Social Links */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex flex-wrap justify-center gap-8">
-        {socialLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target={link.href.startsWith("mailto") ? "_self" : "_blank"}
-            rel="noopener noreferrer"
-            className="text-slate-500 text-sm hover:text-[#a78bfa] transition-colors duration-200 tracking-wide">
-            {link.label}
-          </a>
-        ))}
+        <div className="relative mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3 border-t border-white/10 pt-7">
+          {socialLinks.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500 transition hover:text-white">{link.label} ↗</a>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

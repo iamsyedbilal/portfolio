@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Syed Bilal — React & TypeScript Developer",
+  title: "Syed Bilal — Backend-focused Full-Stack Developer",
   description:
-    "Frontend developer from Karachi building dashboards, SaaS apps, and web applications.",
+    "Syed Bilal is a backend-focused full-stack developer from Karachi building APIs, SaaS products, database-backed applications, and modern web experiences.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",

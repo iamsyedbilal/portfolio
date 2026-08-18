@@ -1,71 +1,20 @@
 import { navLinks } from "@/lib/data";
 import { motion, AnimatePresence } from "framer-motion";
 
-type MobileMenuProps = {
-  open: boolean;
-  setOpen: (val: boolean) => void;
-};
+type MobileMenuProps = { open: boolean; setOpen: (val: boolean) => void };
 
 export default function MobileMenu({ open, setOpen }: MobileMenuProps) {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: -20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          exit={{
-            opacity: 0,
-            y: -20,
-          }}
-          transition={{
-            duration: 0.25,
-          }}
-          className="
-              absolute
-              top-17.5
-              left-0
-              right-0
-              bg-[#0f0a1e]/95
-              backdrop-blur-xl
-              border-b
-              border-[#a78bfa]/15
-              md:hidden
-            ">
-          <ul className="flex flex-col p-8 gap-6">
-            {navLinks.map((link) => (
+        <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} className="absolute left-4 right-4 top-16 rounded-3xl border border-white/10 bg-[#0a0b10]/95 p-6 shadow-2xl backdrop-blur-xl md:hidden">
+          <ul className="space-y-2">
+            {navLinks.map((link, index) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-lg text-slate-300 hover:text-[#a78bfa] transition-colors">
-                  {link.label}
-                </a>
+                <a href={link.href} onClick={() => setOpen(false)} className="flex items-center justify-between rounded-2xl px-4 py-4 text-sm text-slate-300 transition hover:bg-white/[0.05] hover:text-white"><span>0{index + 1}</span><span>{link.label}</span></a>
               </li>
             ))}
-
-            <li>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                    inline-block
-                    border
-                    border-[#a78bfa]
-                    text-[#a78bfa]
-                    px-4
-                    py-2
-                    rounded-md
-                  ">
-                Resume
-              </a>
-            </li>
+            <li className="pt-2"><a href="/resume.pdf" target="_blank" rel="noreferrer" className="block rounded-2xl bg-white px-4 py-4 text-center text-sm font-semibold text-[#08090d]">View résumé ↗</a></li>
           </ul>
         </motion.div>
       )}

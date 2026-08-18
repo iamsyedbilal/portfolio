@@ -1,51 +1,57 @@
 "use client";
 
-import { links } from "@/lib/data";
 import { motion } from "framer-motion";
-import CodeBlock from "@/components/CodeBlock";
+import { links } from "@/lib/data";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[92vh] flex items-center pt-24 px-6 md:px-16 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_70%_35%,rgba(167,139,250,0.14),transparent_32%),radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.06),transparent_30%)]" />
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+    <section id="hero" className="relative mx-auto flex min-h-screen max-w-7xl items-center overflow-hidden px-6 pb-20 pt-32 md:px-10">
+      <div className="pointer-events-none absolute left-[8%] top-[20%] h-64 w-64 rounded-full bg-[#a78bfa]/10 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-[12%] right-[5%] h-72 w-72 rounded-full bg-cyan-300/[0.045] blur-[120px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
-        <div>
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-3 rounded-full border border-[#a78bfa]/20 bg-[#a78bfa]/5 px-4 py-2 text-xs font-mono uppercase tracking-[0.2em] text-[#c4b5fd] mb-7">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
-            Building toward backend engineering
-          </motion.div>
+      <div className="relative z-10 w-full">
+        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }} className="mb-7 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-slate-500">
+          <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" /><span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" /></span>
+          Available for selected projects · Karachi, Pakistan
+        </motion.div>
 
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }} className="text-slate-500 font-mono text-sm mb-3">
-            // hello, I&apos;m
-          </motion.p>
+        <div className="grid items-end gap-12 lg:grid-cols-[1.25fr_.75fr]">
+          <div>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1, duration: .7 }} className="mb-4 font-mono text-xs tracking-[0.2em] text-[#a78bfa]">I&apos;M SYED BILAL — 2026</motion.p>
+            <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .16, duration: .8 }} className="max-w-5xl text-[clamp(3.7rem,9vw,8.5rem)] font-semibold leading-[.86] tracking-[-0.075em] text-white">
+              I build the<br /><span className="text-slate-500">systems behind</span><br />the products.
+            </motion.h1>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .45, duration: .7 }} className="mt-9 max-w-2xl text-base leading-8 text-slate-400 md:text-lg">
+              Backend-focused full-stack developer building APIs, database-backed applications and SaaS products. Strong frontend instincts, increasingly obsessed with what happens behind the screen.
+            </motion.p>
 
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.12 }} className="text-6xl md:text-8xl font-black tracking-[-0.05em] text-white leading-[0.95]">
-            Syed Bilal<span className="text-[#a78bfa]">.</span>
-          </motion.h1>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .55, duration: .6 }} className="mt-9 flex flex-wrap items-center gap-3">
+              <a href="#projects" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#08090d] transition hover:-translate-y-1">Explore the work ↓</a>
+              <a href="#contact" className="rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-1 hover:border-white/30">Let&apos;s talk ↗</a>
+            </motion.div>
+          </div>
 
-          <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.2 }} className="mt-6 text-3xl md:text-5xl font-bold leading-tight text-slate-300 max-w-3xl">
-            I build the <span className="text-white">systems behind the products.</span>
-          </motion.h2>
-
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.3 }} className="mt-7 text-lg leading-8 text-slate-400 max-w-2xl">
-            Backend-focused full-stack developer from <span className="text-[#c4b5fd]">Karachi, Pakistan</span>. I&apos;m going deeper into APIs, PostgreSQL, authentication, architecture, security, and production systems while keeping a strong frontend foundation.
-          </motion.p>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="mt-9 flex flex-wrap gap-4">
-            <motion.a href="#projects" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }} className="rounded-xl bg-white px-6 py-3.5 font-semibold text-[#0f0a1e] transition-all hover:bg-[#ddd6fe]">Explore my work ↓</motion.a>
-            <motion.a href="#journey" whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }} className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3.5 font-semibold text-slate-200 transition-all hover:border-[#a78bfa]/40 hover:bg-[#a78bfa]/10">See the journey →</motion.a>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.55 }} className="mt-8 flex flex-wrap gap-5 text-xs font-mono text-slate-500">
-            {links.slice(0, 3).map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="hover:text-[#c4b5fd] transition-colors">{social.label} ↗</a>
-            ))}
+          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: .35, duration: .8 }} className="hidden lg:block">
+            <div className="engineering-grid rounded-[2rem] border border-white/10 p-5 shadow-2xl shadow-black/30">
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#090a0f]/90 p-6 font-mono text-xs text-slate-500">
+                <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4"><span>bilal.config.ts</span><span className="text-emerald-400">● online</span></div>
+                <div className="space-y-3 leading-6">
+                  <p><span className="text-[#a78bfa]">role</span>: <span className="text-white">"backend-focused developer"</span></p>
+                  <p><span className="text-[#a78bfa]">focus</span>: <span className="text-white">["APIs", "Postgres", "architecture"]</span></p>
+                  <p><span className="text-[#a78bfa]">build</span>: <span className="text-white">"real products"</span></p>
+                  <p><span className="text-[#a78bfa]">ratio</span>: <span className="text-cyan-300">"70 / 30"</span></p>
+                </div>
+                <div className="mt-8 h-px bg-gradient-to-r from-[#a78bfa] via-cyan-300/50 to-transparent" />
+                <div className="mt-5 grid grid-cols-2 gap-3 text-[10px] uppercase tracking-widest"><span className="rounded-lg border border-white/10 p-3">Node / TS</span><span className="rounded-lg border border-white/10 p-3">PostgreSQL</span><span className="rounded-lg border border-white/10 p-3">Supabase</span><span className="rounded-lg border border-white/10 p-3">Next.js</span></div>
+              </div>
+            </div>
           </motion.div>
         </div>
 
-        <CodeBlock />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .8 }} className="mt-20 flex flex-wrap items-center justify-between gap-6 border-t border-white/10 pt-6">
+          <div className="flex gap-5">{links.slice(0, 3).map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-600 transition hover:text-white">{link.label} ↗</a>)}</div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-600">01 / 05 — scroll to explore</div>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,22 +2,25 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { reasons } from "@/lib/data";
+
+const principles = [
+  ["01", "Understand the data", "Good products start with clear models, constraints and ownership."],
+  ["02", "Design for change", "I prefer boundaries and simple abstractions that can evolve without becoming a maze."],
+  ["03", "Ship, then sharpen", "Production teaches things a tutorial cannot. Build, observe, fix and improve."],
+  ["04", "Keep the interface honest", "The UI should reflect the underlying system instead of hiding its complexity."],
+];
 
 export default function WhyMe() {
   return (
-    <section id="whyme" className="py-28 px-6 md:px-10 max-w-7xl mx-auto">
-      <SectionHeading number="02." title="How I think about engineering" />
-      <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-slate-400 text-lg leading-8 mb-14 max-w-2xl">
-        I&apos;m still growing as a backend engineer. That&apos;s exactly why I want this portfolio to show the way I approach problems — not pretend I already know everything.
-      </motion.p>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {reasons.map((reason, index) => (
-          <motion.article key={reason.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }} whileHover={{ y: -5 }} className="group rounded-2xl border border-white/10 bg-white/[0.025] p-6 hover:border-[#a78bfa]/30 hover:bg-[#a78bfa]/[0.04] transition-all">
-            <div className="flex items-center justify-between mb-8"><span className="font-mono text-xs text-[#a78bfa]">{reason.icon}</span><span className="text-slate-700 group-hover:text-slate-500 transition-colors">↗</span></div>
-            <h3 className="text-white font-semibold text-lg mb-3">{reason.title}</h3>
-            <p className="text-slate-500 text-sm leading-6">{reason.desc}</p>
+    <section id="whyme" className="mx-auto max-w-7xl px-6 py-28 md:px-10">
+      <SectionHeading number="02 /" title="How I think" />
+      <div className="grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 md:grid-cols-2">
+        {principles.map(([number, title, desc], index) => (
+          <motion.article key={number} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .5, delay: index * .08 }} className="group relative bg-[#0b0c11] p-8 md:p-10">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-[#a78bfa]">{number}</span>
+            <h3 className="mt-12 text-2xl font-semibold tracking-[-0.03em] text-white">{title}</h3>
+            <p className="mt-3 max-w-sm text-sm leading-7 text-slate-500">{desc}</p>
+            <span className="absolute bottom-0 left-0 h-px w-0 bg-[#a78bfa] transition-all duration-500 group-hover:w-full" />
           </motion.article>
         ))}
       </div>

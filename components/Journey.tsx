@@ -6,53 +6,46 @@ import SectionHeading from "./SectionHeading";
 
 export default function Journey() {
   return (
-    <section id="journey" className="py-8 px-6 md:px-10 max-w-6xl mx-auto">
-      {/* Section Label */}
-      <SectionHeading number="04." title="My Journey" />
+    <section id="journey" className="mx-auto max-w-7xl px-6 py-28 md:px-10">
+      <SectionHeading number="04 /" title="The trajectory" />
 
-      {/* Timeline */}
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-1.75 md:left-1/2 top-0 bottom-0 w-px bg-[#a78bfa]/15 -translate-x-1/2" />
-
-        <div className="space-y-12">
-          {journey.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative flex gap-8 md:gap-0 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}>
-              {/* Content */}
-              <div
-                className={`w-full md:w-1/2 ${
-                  index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
-                } pl-10 md:pl-0`}>
-                <div className="p-5 border border-[#a78bfa]/15 rounded-xl bg-[#1a1333]/50 hover:border-[#a78bfa]/30 transition-all duration-300">
-                  <span className="text-[#a78bfa] font-mono text-xs uppercase tracking-widest">
-                    {item.year}
-                  </span>
-                  <h3 className="text-white font-semibold text-lg mt-1 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-
-              {/* Dot */}
-              <div className="absolute left-0 md:left-1/2 top-6 w-3.5 h-3.5 rounded-full bg-[#a78bfa] border-2 border-[#0f0a1e] -translate-x-1/2 z-10 shadow-[0_0_10px_rgba(167,139,250,0.5)]" />
-
-              {/* Empty space for opposite side */}
-              <div className="hidden md:block md:w-1/2" />
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {journey.map((item, index) => (
+          <motion.article
+            key={`${item.year}-${item.title}`}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, delay: index * 0.07 }}
+            whileHover={{ y: -5 }}
+            className="group relative min-h-[220px] overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025] p-7 transition-colors hover:border-[#a78bfa]/30"
+          >
+            <div className="absolute right-5 top-5 font-mono text-[10px] text-white/20">0{index + 1}</div>
+            <span className="font-mono text-xs tracking-[0.2em] text-[#a78bfa]">{item.year}</span>
+            <h3 className="mt-8 text-2xl font-semibold tracking-[-0.03em] text-white">{item.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-500 transition-colors group-hover:text-slate-400">{item.desc}</p>
+            <div className="absolute bottom-0 left-0 h-px w-0 bg-[#a78bfa] transition-all duration-500 group-hover:w-full" />
+          </motion.article>
+        ))}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="mt-12 rounded-3xl border border-[#a78bfa]/20 bg-[#a78bfa]/[0.035] p-8 md:p-10"
+      >
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#a78bfa]">Next chapter</p>
+            <h3 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Frontend was the entry point. Backend is the direction.</h3>
+          </div>
+          <div className="shrink-0 rounded-2xl border border-white/10 bg-black/20 px-6 py-5 font-mono text-xs text-slate-400">
+            <div><span className="text-[#a78bfa]">70%</span> backend</div>
+            <div><span className="text-cyan-300">30%</span> frontend</div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

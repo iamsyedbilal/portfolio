@@ -1,29 +1,18 @@
-import {
-  Navbar,
-  Hero,
-  About,
-  Projects,
-  Journey,
-  Contact,
-  Footer,
-  Loader,
-  WhyMe,
-} from "@/components";
+import { Navbar, Hero, About, WhyMe, Projects, Journey, Contact, Footer } from "@/components";
 
 export default function Home() {
   return (
     <>
-      <Loader />
+      <Navbar />
       <main>
-        <Navbar />
         <Hero />
         <About />
         <WhyMe />
         <Projects />
         <Journey />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

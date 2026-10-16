@@ -1,5 +1,123 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 
-export default function Hero(){return <section id="hero" className="relative mx-auto flex min-h-[88vh] max-w-7xl items-center overflow-hidden px-6 pb-14 pt-28 md:px-10"><div className="pointer-events-none absolute left-[8%] top-[20%] h-64 w-64 rounded-full bg-[#a78bfa]/10 blur-[110px]"/><div className="pointer-events-none absolute bottom-[12%] right-[5%] h-72 w-72 rounded-full bg-cyan-300/[.04] blur-[120px]"/><div className="relative z-10 w-full"><motion.div initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{duration:.65}} className="mb-6 flex items-center gap-3 font-mono text-[9px] uppercase tracking-[.28em] text-slate-500"><span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"/><span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"/></span>Available for selected projects · Karachi, Pakistan</motion.div><div className="grid items-end gap-10 lg:grid-cols-[1.3fr_.7fr] lg:gap-14"><div><motion.p initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:.08,duration:.65}} className="mb-3 font-mono text-[10px] tracking-[.2em] text-[#a78bfa]">I&apos;M SYED BILAL — 2026</motion.p><motion.h1 initial={{opacity:0,y:22}} animate={{opacity:1,y:0}} transition={{delay:.14,duration:.75}} className="max-w-5xl text-[clamp(3.4rem,8vw,7.5rem)] font-semibold leading-[.88] tracking-[-.075em] text-white">I build the<br/><span className="text-slate-500">products, not</span><br/>just the UI.</motion.h1><motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.4,duration:.65}} className="mt-7 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">Full-stack developer with a frontend foundation, currently going deeper into backend engineering, databases, APIs and system design.</motion.p><motion.div initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{delay:.5,duration:.55}} className="mt-7 flex flex-wrap items-center gap-2.5"><a href="#projects" className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-[#08090d] transition hover:-translate-y-1">Explore the work ↓</a><a href="#contact" className="rounded-full border border-white/15 bg-white/[.03] px-5 py-2.5 text-xs font-semibold text-white transition hover:-translate-y-1 hover:border-white/30">Let&apos;s talk ↗</a></motion.div></div><motion.div initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} transition={{delay:.3,duration:.75}} className="hidden lg:block"><div className="engineering-grid rounded-[1.5rem] border border-white/10 p-4 shadow-2xl shadow-black/30"><div className="rounded-[1.15rem] border border-white/10 bg-[#090a0f]/90 p-5 font-mono text-[10px] text-slate-500"><div className="mb-6 flex items-center justify-between border-b border-white/10 pb-3"><span>bilal.config.ts</span><span className="text-emerald-400">● online</span></div><div className="space-y-2.5 leading-5"><p><span className="text-[#a78bfa]">role</span>: <span className="text-white">"full-stack developer"</span></p><p><span className="text-[#a78bfa]">direction</span>: <span className="text-white">"backend engineering"</span></p><p><span className="text-[#a78bfa]">focus</span>: <span className="text-white">["APIs", "Postgres", "systems"]</span></p><p><span className="text-[#a78bfa]">build</span>: <span className="text-white">"real products"</span></p></div><div className="mt-6 h-px bg-gradient-to-r from-[#a78bfa] via-cyan-300/50 to-transparent"/><div className="mt-4 grid grid-cols-2 gap-2 text-[9px] uppercase tracking-widest"><span className="rounded-lg border border-white/10 p-2.5">React / Next</span><span className="rounded-lg border border-white/10 p-2.5">Node / TS</span><span className="rounded-lg border border-white/10 p-2.5">PostgreSQL</span><span className="rounded-lg border border-white/10 p-2.5">Supabase</span></div></div></div></motion.div></div><motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:.75}} className="mt-12 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-5"><div className="flex gap-5">{links.slice(0,3).map(link=><a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="font-mono text-[9px] uppercase tracking-[.2em] text-slate-600 transition hover:text-white">{link.label} ↗</a>)}</div><div className="font-mono text-[9px] uppercase tracking-[.2em] text-slate-600">scroll to explore ↓</div></motion.div></div></section>}
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export default function Hero() {
+  return (
+    <section id="hero" className="relative mx-auto flex min-h-[82vh] max-w-7xl items-center overflow-hidden px-5 pb-12 pt-28 sm:px-8 md:px-10">
+      <div className="pointer-events-none absolute right-[8%] top-[18%] h-64 w-64 rounded-full bg-white/[.035] blur-[100px]" />
+      <div className="relative z-10 w-full">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: .55 }}
+          className="mb-7 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[.18em] text-zinc-400"
+        >
+          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          Available for selected opportunities · Karachi, Pakistan
+        </motion.div>
+
+        <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-16">
+          <div>
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: .08, duration: .55 }}
+              className="mb-5 text-xs font-medium uppercase tracking-[.22em] text-zinc-400"
+            >
+              I&apos;m Syed Bilal
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: .14, duration: .65 }}
+              className="max-w-4xl text-[clamp(3.25rem,8vw,7rem)] font-semibold leading-[.94] tracking-[-.07em] text-zinc-50"
+            >
+              Building thoughtful
+              <br />
+              <span className="text-zinc-500">digital products.</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .32, duration: .55 }}
+              className="mt-7 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base sm:leading-8"
+            >
+              Full-stack developer with a frontend foundation, focused on building useful interfaces, reliable APIs, and maintainable backend systems.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: .42, duration: .5 }}
+              className="mt-8 flex flex-wrap items-center gap-3"
+            >
+              <a href="#projects" className="inline-flex min-h-11 items-center rounded-full bg-zinc-100 px-5 py-3 text-sm font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:bg-white">
+                View selected work <span className="ml-2" aria-hidden="true">↘</span>
+              </a>
+              <a href="#contact" className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-5 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/35 hover:bg-white/[.04]">
+                Get in touch <span className="ml-2" aria-hidden="true">↗</span>
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.aside
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: .28, duration: .65 }}
+            className="hidden lg:block"
+            aria-label="Development focus"
+          >
+            <div className="rounded-2xl border border-white/10 bg-white/[.025] p-6">
+              <p className="text-xs uppercase tracking-[.18em] text-zinc-500">Current focus</p>
+              <div className="mt-6 space-y-5">
+                {[
+                  ["01", "Backend engineering", "APIs, authentication, business logic"],
+                  ["02", "Data & persistence", "PostgreSQL, Supabase, schema design"],
+                  ["03", "Product development", "From first interface to deployment"],
+                ].map(([number, title, description]) => (
+                  <div key={number} className="flex gap-4 border-t border-white/10 pt-4">
+                    <span className="pt-0.5 font-mono text-xs text-zinc-600">{number}</span>
+                    <div>
+                      <h2 className="text-sm font-medium text-zinc-100">{title}</h2>
+                      <p className="mt-1 text-xs leading-5 text-zinc-500">{description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"].map((skill) => (
+                  <span key={skill} className="rounded-full border border-white/10 px-3 py-1.5 text-[11px] text-zinc-400">{skill}</span>
+                ))}
+              </div>
+            </div>
+          </motion.aside>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: .65, duration: .5 }}
+          className="mt-14 flex flex-wrap items-center justify-between gap-5 border-t border-white/10 pt-5"
+        >
+          <div className="flex flex-wrap gap-x-5 gap-y-3">
+            {links.slice(0, 3).map((link) => (
+              <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="text-xs text-zinc-500 transition hover:text-zinc-100">
+                {link.label} ↗
+              </a>
+            ))}
+          </div>
+          <a href="#about" className="text-xs text-zinc-500 transition hover:text-zinc-200">Scroll to explore ↓</a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

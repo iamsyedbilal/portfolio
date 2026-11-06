@@ -1,64 +1,61 @@
-# Syed Bilal — Portfolio
+# Syed Bilal — Developer Portfolio
 
-> A modern personal portfolio showcasing my work, skills, experience, and selected projects.
-
-Built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, with a focus on clean design, smooth interactions, and a fast user experience.
+A cinematic, interactive portfolio for my work as a backend-focused full-stack developer. Built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and a real-time 3D scene powered by Three.js through React Three Fiber.
 
 **Live:** [syedbilal.vercel.app](https://syedbilal.vercel.app)
 
-## ✨ Highlights
+## Experience
 
-- Responsive, modern portfolio experience
-- Animated UI and smooth page interactions
-- Featured projects and noteworthy work
-- Skills and technology overview
-- Personal journey / experience timeline
-- Contact section for collaboration and opportunities
+- Interactive 3D hero scene with a floating, animated core, orbital rings, stars, and ambient particles
+- Pointer-reactive motion and layered lighting
+- Smooth entrance and scroll animations
+- Responsive project, skills, journey, and contact sections
+- Dark visual system with violet and cyan accents
+- Reduced-motion-friendly CSS and lightweight scene settings
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Next.js 14** — App Router
-- **TypeScript** — Type-safe development
-- **Tailwind CSS** — Styling and responsive layouts
-- **Framer Motion** — Animations and interactions
-- **Vercel** — Deployment
+| Technology | Purpose |
+| --- | --- |
+| Next.js 16 | App framework and routing |
+| React 19 + TypeScript | UI and type-safe development |
+| Tailwind CSS 4 | Responsive styling |
+| Three.js | 3D rendering |
+| React Three Fiber | Declarative Three.js in React |
+| Drei | 3D helpers, materials, stars, and sparkles |
+| Framer Motion | UI transitions and interactions |
+| Vercel | Deployment |
 
-## 📂 Portfolio Sections
+## Portfolio Sections
 
-- **Hero** — Introduction and primary call-to-actions
-- **About** — Background, skills, stats, and current focus
-- **Projects** — Featured and noteworthy projects
+- **Hero** — Introduction, availability, links, and interactive 3D scene
+- **About** — Background, skills, and current focus
+- **Why Me** — Engineering approach and strengths
+- **Projects** — Selected work, technology, and project links
 - **Journey** — Experience and development timeline
-- **Contact** — Ways to get in touch
+- **Contact** — Collaboration and contact details
 
-## 🚀 Getting Started
-
-Clone the repository and install the dependencies:
+## Getting Started
 
 ```bash
 git clone https://github.com/iamsyedbilal/portfolio.git
 cd portfolio
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-## 📦 Available Scripts
+## Scripts
 
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Start the development server |
-| `npm run build` | Build the application for production |
+| `npm run build` | Create a production build |
 | `npm run start` | Start the production server |
-| `npm run lint` | Run the ESLint checks |
+| `npm run lint` | Run ESLint |
 
-## 📬 Contact
+## Contact
 
 - **Email:** [syedbilal.dev27@gmail.com](mailto:syedbilal.dev27@gmail.com)
 - **GitHub:** [@iamsyedbilal](https://github.com/iamsyedbilal)
@@ -67,4 +64,4 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-Built with ❤️ by **Syed Bilal**.
+Built with curiosity and a little 3D magic by **Syed Bilal**.

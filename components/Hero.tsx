@@ -1,7 +1,10 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
+
+const ThreeScene = dynamic(() => import("./ThreeScene"), { ssr: false });
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -20,9 +23,12 @@ export default function Hero() {
       id="hero"
       className="relative mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-7xl items-center px-5 pb-10 pt-28 sm:px-8 md:px-10 lg:pt-32"
     >
+      <div className="pointer-events-none absolute right-[-12%] top-[2%] z-0 h-[88%] w-[72%] opacity-75 sm:right-[-7%] sm:w-[64%] lg:right-[-4%] lg:w-[62%]">
+        <ThreeScene />
+      </div>
       <div className="pointer-events-none absolute left-[8%] top-[24%] -z-10 h-72 w-72 rounded-full bg-violet-400/[0.06] blur-[110px]" />
 
-      <div className="w-full">
+      <div className="relative z-10 w-full">
         <motion.div
           variants={fadeUp}
           initial="hidden"

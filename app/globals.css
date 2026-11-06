@@ -71,3 +71,30 @@ a { -webkit-tap-highlight-color: transparent; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Three.js portfolio atmosphere */
+:root {
+  --bg: #070711;
+  --surface: #101020;
+  --accent: #a78bfa;
+  --accent-2: #22d3ee;
+  --text-primary: #f8fafc;
+  --text-secondary: #a1a1aa;
+  --border: rgba(196,181,253,.14);
+}
+body {
+  background:
+    radial-gradient(ellipse at 78% 18%, rgba(124,58,237,.13), transparent 34rem),
+    radial-gradient(ellipse at 12% 52%, rgba(8,145,178,.08), transparent 30rem),
+    var(--bg);
+}
+body::before {
+  background-image:
+    linear-gradient(rgba(167,139,250,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167,139,250,.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+::selection { background: #a78bfa; color: #09090b; }
+::-webkit-scrollbar-thumb { background: #6d5a9e; }
+::-webkit-scrollbar-thumb:hover { background: #a78bfa; }
